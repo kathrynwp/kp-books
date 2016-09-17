@@ -72,12 +72,6 @@ add_filter( 'the_content', 'custom_taxonomies_content' );
  	global $post;
  	
     if ( in_the_loop() && is_post_type_archive( 'kp_books' ) ) { 
-        // $foo = "Foo";
-        // $content = $foo . $content;
-
-   		// echo get_the_term_list( $post->ID, 'books-author', 'Authors: ', ', ' );
-   		// echo get_the_term_list( $post->ID, 'books-genre', ' Genre: ', ', ' );
-        
 		$authors = get_the_term_list( $post->ID, 'books-author', '<li class="book-author">Authors: ', ', ', '</li>' );
         
     	$genres = get_the_term_list( $post->ID, 'books-genre', '<li class="book-genre">Genre: ', ', ', '</li>' );
