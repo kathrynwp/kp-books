@@ -71,7 +71,7 @@ add_filter( 'the_content', 'custom_taxonomies_content' );
  function custom_taxonomies_content( $content ) { 
  	global $post;
  	
-    if ( is_post_type_archive( 'kp_books' ) ) { 
+    if ( in_the_loop() && is_post_type_archive( 'kp_books' ) ) { 
         // $foo = "Foo";
         // $content = $foo . $content;
 
